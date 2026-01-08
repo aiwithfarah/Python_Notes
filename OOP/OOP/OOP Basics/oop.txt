@@ -1,0 +1,36 @@
+In Python, everything is an "Object."
+Class : defines the structure (walls, windows). It's just a template
+Object : This is the actual house built from that blueprint.
+  You can build 50 houses (Objects) from one blueprint (Class).
+  Each house has different owners and colors, but the same structure.
+
+Syntax : class keyword
+Inside a class, functions are called Methods. There is one special method you must know: __init__.
+__init__ (The Constructor): This runs automatically the moment you create a new object.
+    It sets up the initial data.
+self: This is the most confusing word for beginners. self just means "My own data."
+     It allows each object to know its own specific values.
+
+
+# 1. Define the Class (The Blueprint)
+class Dog:
+    # The Setup Function (Constructor)
+    def __init__(self, name, breed):
+        self.name = name   # Save 'name' into MY memory
+        self.breed = breed # Save 'breed' into MY memory
+
+    # A Custom Method (Action)
+    def bark(self):
+        print("Woof! My name is " + self.name)
+
+# 2. Create Objects (Build the Houses)
+dog1 = Dog("Buddy", "Golden Retriever")
+dog2 = Dog("Rex", "German Shepherd")
+
+# 3. Use them
+print(dog1.breed)  # Output: Golden Retriever
+dog2.bark()        # Output: Woof! My name is Rex
+
+
+** Why self matters: When dog2.bark() runs, self.name knows to look for "Rex", not "Buddy".
+ self connects the code to that specific object's data.
