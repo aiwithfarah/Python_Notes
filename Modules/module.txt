@@ -1,0 +1,30 @@
+In Python, a Module is simply a single file ending in .py that contains code
+(functions, variables, or classes).
+
+Modules allow you to break that program into smaller, organized files.
+    -login.py (Handles user login)
+    -database.py (Handles data storage)
+    -analysis.py (Handles the math)
+
+You can then import these files into your main program to use them.
+
+MODULE VS LIBRARY 
+    Module: One single file (.py).
+    Package/Library: A folder containing many modules.
+    (e.g., Pandas is a library because it has hundreds of files inside it for reading CSVs, plotting, math, etc.).
+
+
+The Rule: For Python to understand that a folder is a package
+(so you can do from my_folder import my_file), that folder usually needs a special file inside it called __init__.py.
+What's inside it? Often nothing! It can be an empty file. Its mere existence tells Python: "Treat this directory as a package.
+
+my_project/
+|
+|----data_processing/     <-----This is a Package
+|    |--__init__.py       <-----The flag
+|    |--cleaner.py        <-----Module
+|    |__loader.py         <-----Module
+|
+|___main.py
+
+* In main.py, you can now run: from data_processing import cleaner
