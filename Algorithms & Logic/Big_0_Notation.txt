@@ -1,0 +1,34 @@
+1. The Concept: Time Complexity (Big O)
+Scenario A: The books are messy. You have to check every single book one by one.
+If there are 1,000 books, you might do 1,000 checks. This is O(n) (Linear Time).
+
+Scenario B: The books are sorted alphabetically.
+You look at the middle, see "M", and know "Python" is to the right.
+You cut the problem in half every time. This is O(log n) (Logarithmic Time).
+
+Big O measures how the time grows as the data grows.
+  - O(1): Instant. (e.g., Accessing a specific list index arr[5]).
+  - O(n): Proportional. (e.g., Looping through a list).
+  - O(n^2): Slow. (e.g., A loop inside a loop).
+
+2. Example: Linear Search (The Basic Approach)
+This checks every item until it finds the target.
+
+def linear_search(data, target):
+    # Iterate through the entire list (O(n))
+    for i in range(len(data)):
+        if data[i] == target:
+            return i # Found it! Return the index
+    return -1 # Not found
+
+
+------QUIZ-------------
+
+Question 1: If you have a list of 1,000,000 items, which operation is faster? (A) O(n) - Checking them one by one. (B) O(1) - Jumping directly to a known index.
+--> B
+
+Question 2: You write a function with a for loop inside another for loop (Nested Loops). What is the likely time complexity? (A) O(n) (B) O(log n) (C) O(n^2) (Quadratic - Very Slow)
+--> C  
+
+Question 3: Why do Leads care about Big O? (A) It makes the code look shorter. (B) It prevents servers from crashing when users increase from 10 to 10 million. (C) It is required by Python syntax.
+--> B 
